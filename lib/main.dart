@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_training/counter/view/counter_page.dart';
+
+import 'counter/view/counter_page.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_training/counter/view/widgets/counter_text_widget.dart';
-import 'package:flutter_training/counter/view/widgets/decrement_button.dart';
-import 'package:flutter_training/counter/view/widgets/increment_button.dart';
-import 'package:flutter_training/counter/view/widgets/title_text_widget.dart';
-import 'package:flutter_training/counter/view_model/counter_view_model.dart';
+import 'counter_text_widget.dart';
+import 'decrement_button.dart';
+import 'increment_button.dart';
+import 'title_text_widget.dart';
+import '../../view_model/counter_view_model.dart';
 
 class SelectorCounterWidget extends StatelessWidget {
   const SelectorCounterWidget({super.key});

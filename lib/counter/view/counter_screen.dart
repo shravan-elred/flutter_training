@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/counter/view/widgets/consumer_counter_widget.dart';
-import 'package:flutter_training/counter/view/widgets/selector_counter_widget.dart';
+import 'widgets/consumer_counter_widget.dart';
+import 'widgets/selector_counter_widget.dart';
 
 class CounterScreen extends StatelessWidget {
   const CounterScreen({Key? key}) : super(key: key);
