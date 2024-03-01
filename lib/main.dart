@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'counter/view/counter_page.dart';
+import 'palette/view/palette_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.poppins().fontFamily,
         useMaterial3: true,
       ),
-      home: const CounterPage(),
+      home: const PalettePage(),
     );
   }
 }
