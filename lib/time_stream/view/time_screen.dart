@@ -11,7 +11,7 @@ class TimeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Timer'),
+        title: const Text('Streams'),
       ),
       body: Center(
         child: StreamBuilder<DateTime>(

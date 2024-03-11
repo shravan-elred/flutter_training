@@ -10,7 +10,7 @@ class ScreenTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Screen two'),
+        title: const Text('Extensions'),
       ),
       floatingActionButton: FloatingActionButton.extended(
         icon: const Icon(Icons.arrow_back_ios_new_sharp),

@@ -3,7 +3,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'callable_function/example.dart';
+import 'generic/example.dart';
 import 'mixin/example.dart';
+import 'records/example.dart';
 import 'screen_one.dart';
 import 'singleton/singleton1.dart';
 import 'singleton/singleton2.dart';
@@ -55,6 +58,13 @@ void main() {
   const String name = 'hello, my name is shravan chilka';
   log(name.capitalizeFirst());
   log(name.titleCase());
+
+  log('---Record---');
+  recordExpample();
+  log('---Generic---');
+  genericExample();
+  log('---Callable Function---');
+  callableFunctionExample();
 
   runApp(const MyApp());
 }

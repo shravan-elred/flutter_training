@@ -10,7 +10,7 @@ class ScreenOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Screen one'),
+        title: const Text('Extensions'),
       ),
       floatingActionButton: FloatingActionButton.extended(
         icon: const Icon(Icons.arrow_forward_ios_sharp),
