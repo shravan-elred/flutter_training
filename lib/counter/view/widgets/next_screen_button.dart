@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class DecrementButton extends StatelessWidget {
-  const DecrementButton({
+class NextScreenButton extends StatelessWidget {
+  const NextScreenButton({
     super.key,
-    required this.onTap,
+    this.onTap,
   });
 
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +14,13 @@ class DecrementButton extends StatelessWidget {
       onTap: onTap,
       child: Ink(
         decoration: BoxDecoration(
-          color: Colors.pink.shade100,
           border: Border.all(
             color: Theme.of(context).colorScheme.outlineVariant,
           ),
         ),
-        height: 100,
+        height: 60,
         child: const Center(
-          child: Icon(Icons.remove),
+          child: Text('Navigate to next screen'),
         ),
       ),
     );

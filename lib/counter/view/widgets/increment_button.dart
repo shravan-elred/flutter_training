@@ -13,6 +13,12 @@ class IncrementButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Ink(
+        decoration: BoxDecoration(
+          color: Colors.teal.shade100,
+          border: Border.all(
+            color: Theme.of(context).colorScheme.outlineVariant,
+          ),
+        ),
         height: 100,
         child: const Center(
           child: Icon(Icons.add),
