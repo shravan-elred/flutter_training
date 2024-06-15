@@ -13,12 +13,15 @@ class UserListView extends StatelessWidget {
     return Selector<UserViewModel, List<UserModel>>(
       selector: (_, vm) => vm.users,
       builder: (context, users, child) {
-        return ListView.builder(
+        return ListView.separated(
           itemCount: users.length,
           itemBuilder: (context, index) {
             final user = users[index];
             return UserListItem(user: user);
           },
+          separatorBuilder: (_, __) => const Divider(
+            height: 1,
+          ),
         );
       },
     );

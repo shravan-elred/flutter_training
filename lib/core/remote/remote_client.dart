@@ -55,8 +55,10 @@ class RemoteClient {
     return Uri(
       scheme: _getScheme(host),
       host: _getHost(host),
-      pathSegments: path.split('/'),
-      queryParameters: queryParameters,
+      path: path,
+      queryParameters: queryParameters?.map<String, String>(
+        (key, value) => MapEntry(key, value.toString()),
+      ),
     );
   }
 

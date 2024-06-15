@@ -5,27 +5,33 @@ import '../../core/remote/remote_client.dart';
 import '../model/get_user_remote_response.dart';
 
 class UserRemoteService {
-  final RemoteClient client = RemoteClient(
+  final _client = RemoteClient(
     host: 'https://reqres.in',
   );
 
   Future<GetUserRemoteResponse?> getAllUsers() async {
-    final response = await client.get(path: 'api/users');
+    final response = await _client.get(
+      path: 'api/users',
+      queryParameters: {
+        'page': 1,
+        'per_page': 12,
+      },
+    );
     if (response != null) {
-      return await _parseToUserResponseExecuteGentle(response.body);
+      return await _parseToUserResponseExecute(response.body);
     }
     return null;
   }
 
   Future<GetUserRemoteResponse> _parseToUserResponse(String body) async {
+    return GetUserRemoteResponse.fromJson(body);
+  }
+
+  Future<GetUserRemoteResponse> _parseToUserResponseCompute(String body) async {
     return compute(
       GetUserRemoteResponse.fromJson,
       body,
     );
-  }
-
-  void dispose() async {
-    workerManager.dispose();
   }
 
   Future<GetUserRemoteResponse> _parseToUserResponseExecute(
@@ -34,6 +40,7 @@ class UserRemoteService {
     return workerManager
         .execute<GetUserRemoteResponse>(
           () => GetUserRemoteResponse.fromJson(body),
+          priority: WorkPriority.low,
         )
         .future;
   }
@@ -43,7 +50,12 @@ class UserRemoteService {
     return workerManager
         .executeGentle<GetUserRemoteResponse>(
           (_) => GetUserRemoteResponse.fromJson(body),
+          priority: WorkPriority.immediately,
         )
         .future;
+  }
+
+  void dispose() async {
+    workerManager.dispose();
   }
 }
