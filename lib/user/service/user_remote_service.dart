@@ -24,12 +24,12 @@ class UserRemoteService {
   }
 
   Future<GetUserRemoteResponse> _parseToUserResponse(String body) async {
-    return GetUserRemoteResponse.fromJson(body);
+    return GetUserRemoteResponse.fromJsonString(body);
   }
 
   Future<GetUserRemoteResponse> _parseToUserResponseCompute(String body) async {
     return compute(
-      GetUserRemoteResponse.fromJson,
+      GetUserRemoteResponse.fromJsonString,
       body,
     );
   }
@@ -39,7 +39,7 @@ class UserRemoteService {
   ) async {
     return workerManager
         .execute<GetUserRemoteResponse>(
-          () => GetUserRemoteResponse.fromJson(body),
+          () => GetUserRemoteResponse.fromJsonString(body),
           priority: WorkPriority.low,
         )
         .future;
@@ -49,7 +49,7 @@ class UserRemoteService {
       String body) async {
     return workerManager
         .executeGentle<GetUserRemoteResponse>(
-          (_) => GetUserRemoteResponse.fromJson(body),
+          (_) => GetUserRemoteResponse.fromJsonString(body),
           priority: WorkPriority.immediately,
         )
         .future;

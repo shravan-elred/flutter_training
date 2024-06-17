@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'user/view/user_page.dart';
 
+final navigaterKey = GlobalKey<NavigatorState>();
+
 void main() {
   runApp(const MyApp());
 }
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.poppins().fontFamily,
         useMaterial3: true,
       ),
+      navigatorKey: navigaterKey,
       home: const UserPage(),
     );
   }

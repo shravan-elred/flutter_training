@@ -16,7 +16,7 @@ class _UserViewState extends State<UserView> {
   void initState() {
     super.initState();
     Future.microtask(
-      context.read<UserViewModel>().fetchUsers,
+      context.read<UserViewModel>().init,
     );
   }
 

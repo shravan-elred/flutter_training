@@ -1,7 +1,12 @@
 import 'dart:convert';
 
+import 'package:json_annotation/json_annotation.dart';
+
 import 'user_model.dart';
 
+part 'get_user_remote_response.g.dart';
+
+@JsonSerializable()
 class GetUserRemoteResponse {
   const GetUserRemoteResponse({
     required this.page,
@@ -11,27 +16,17 @@ class GetUserRemoteResponse {
     required this.data,
   });
 
-  factory GetUserRemoteResponse.fromMap(Map<String, dynamic> map) {
-    return GetUserRemoteResponse(
-      page: map['page'] as int,
-      perPage: map['per_page'] as int,
-      total: map['total'] as int,
-      totalPages: map['total_pages'] as int,
-      data: List<UserModel>.from(
-        (map['data'] as List).map<UserModel>(
-          (x) => UserModel.fromMap(x as Map<String, dynamic>),
-        ),
-      ),
-    );
-  }
-  factory GetUserRemoteResponse.fromJson(String source) =>
-      GetUserRemoteResponse.fromMap(
-        json.decode(source) as Map<String, dynamic>,
-      );
+  factory GetUserRemoteResponse.fromJsonString(String json) =>
+      GetUserRemoteResponse.fromJson(jsonDecode(json));
+
+  factory GetUserRemoteResponse.fromJson(Map<String, dynamic> json) =>
+      _$GetUserRemoteResponseFromJson(json);
 
   final int page;
+  @JsonKey(name: 'per_page')
   final int perPage;
   final int total;
+  @JsonKey(name: 'total_pages')
   final int totalPages;
   final List<UserModel> data;
 }

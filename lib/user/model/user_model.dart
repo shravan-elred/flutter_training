@@ -1,5 +1,10 @@
 import 'dart:convert';
 
+import 'package:json_annotation/json_annotation.dart';
+
+part 'user_model.g.dart';
+
+@JsonSerializable()
 class UserModel {
   const UserModel({
     required this.id,
@@ -9,22 +14,16 @@ class UserModel {
     required this.avatar,
   });
 
-  factory UserModel.fromJson(String source) =>
-      UserModel.fromMap(json.decode(source) as Map<String, dynamic>);
-
-  factory UserModel.fromMap(Map<String, dynamic> map) {
-    return UserModel(
-      id: map['id'] as int,
-      email: map['email'] as String,
-      firstName: map['first_name'] as String,
-      lastName: map['last_name'] as String,
-      avatar: map['avatar'] as String,
-    );
-  }
+  factory UserModel.fromJson(Map<String, dynamic> json) =>
+      _$UserModelFromJson(json);
 
   final int id;
   final String email;
+  @JsonKey(name: 'first_name')
   final String firstName;
+  @JsonKey(name: 'last_name')
   final String lastName;
   final String avatar;
+
+  Map<String, dynamic> toJson() => _$UserModelToJson(this);
 }
