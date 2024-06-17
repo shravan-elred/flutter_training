@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../view_model/user_view_model.dart';
 import 'widgets/user_list_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class UserView extends StatefulWidget {
   const UserView({super.key});
@@ -15,16 +16,14 @@ class _UserViewState extends State<UserView> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(
-      context.read<UserViewModel>().init,
-    );
+    Future.microtask(context.read<UserViewModel>().fetchUsers);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Users'),
+        title: Text(AppLocalizations.of(context)!.hello),
       ),
       body: const UserListView(),
     );
