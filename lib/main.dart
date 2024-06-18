@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'battery_level/view/battery_level_page.dart';
 import 'user/view/user_page.dart';
 
 final navigaterKey = GlobalKey<NavigatorState>();
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('fr'), // French
       ],
-      home: const UserPage(),
+      home: const BatteryLevelPage(),
     );
   }
 }
