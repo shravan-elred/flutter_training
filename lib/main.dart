@@ -4,6 +4,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'cart/view/cart_view.dart';
+import 'catelog/catelog_view.dart';
+import 'catelog/nested_scroll_view_example.dart';
+import 'custom_painter/custom_painter_example.dart';
 
 final navigaterKey = GlobalKey<NavigatorState>();
 
@@ -34,7 +37,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('fr'), // French
       ],
-      home: const CartView(),
+      home: const CustomPainterExample(),
     );
   }
 }
