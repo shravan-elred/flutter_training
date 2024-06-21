@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'animation/implicit_animation_example.dart';
 import 'custom_clipper/custom_clipper_example.dart';
 
 final navigaterKey = GlobalKey<NavigatorState>();
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('fr'), // French
       ],
-      home: const CustomClipperExample(),
+      home: const ImplicitAnimationExample(),
     );
   }
 }
