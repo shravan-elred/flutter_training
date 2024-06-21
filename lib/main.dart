@@ -3,9 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'cart/view/cart_view.dart';
-import 'catelog/catelog_view.dart';
-import 'catelog/nested_scroll_view_example.dart';
 import 'custom_painter/custom_painter_example.dart';
 
 final navigaterKey = GlobalKey<NavigatorState>();
@@ -25,6 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.poppins().fontFamily,
         useMaterial3: true,
+        colorScheme: const ColorScheme.light(),
       ),
       navigatorKey: navigaterKey,
       localizationsDelegates: const [
