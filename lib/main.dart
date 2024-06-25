@@ -7,6 +7,8 @@ import 'animation/explicit/card_swipe_example.dart';
 import 'animation/explicit/explicit_animation_example.dart';
 import 'animation/explicit/physics_animation_example.dart';
 import 'animation/explicit/tween_animation_builder_example.dart';
+import 'animation/rive/rive_circle_rotate_example.dart';
+import 'animation/rive/rive_space_example.dart';
 
 final navigaterKey = GlobalKey<NavigatorState>();
 
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('fr'), // French
       ],
-      home: const CardSwipeExample(),
+      home: const RiveSpaceExample(),
     );
   }
 }
