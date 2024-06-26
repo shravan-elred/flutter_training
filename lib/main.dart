@@ -3,12 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'animation/explicit/card_swipe_example.dart';
-import 'animation/explicit/explicit_animation_example.dart';
-import 'animation/explicit/physics_animation_example.dart';
-import 'animation/explicit/tween_animation_builder_example.dart';
-import 'animation/rive/rive_circle_rotate_example.dart';
-import 'animation/rive/rive_space_example.dart';
+import 'render_object/slider_render_object_example.dart';
 
 final navigaterKey = GlobalKey<NavigatorState>();
 
@@ -40,7 +35,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('fr'), // French
       ],
-      home: const RiveSpaceExample(),
+      home: const RenderObjectExample(),
     );
   }
 }
