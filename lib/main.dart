@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'render_object/slider_render_object_example.dart';
+import 'routing/app_router.dart';
 import 'state_restoration/state_restoration_example.dart';
 
 final navigaterKey = GlobalKey<NavigatorState>();
@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.instance,
       restorationScopeId: 'root',
       title: 'flutter_training',
       debugShowCheckedModeBanner: false,
@@ -26,7 +27,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         colorScheme: const ColorScheme.light(),
       ),
-      navigatorKey: navigaterKey,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -37,7 +37,6 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('fr'), // French
       ],
-      home: const StateRestorationExample(),
     );
   }
 }
