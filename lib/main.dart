@@ -3,16 +3,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import 'render_object/slider_render_object_example.dart';
+import 'graphical_operation/electron_counter_screen.dart';
+import 'render_object/render_object_demo_screen.dart';
 
 final navigaterKey = GlobalKey<NavigatorState>();
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Application());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Application extends StatelessWidget {
+  const Application({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.poppins().fontFamily,
         useMaterial3: true,
-        colorScheme: const ColorScheme.light(),
+        colorScheme: const ColorScheme.dark(),
       ),
       navigatorKey: navigaterKey,
       localizationsDelegates: const [
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('fr'), // French
       ],
-      home: const RenderObjectExample(),
+      home: const ElectronCounterScreen(),
     );
   }
 }
