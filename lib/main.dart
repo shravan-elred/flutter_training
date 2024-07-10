@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'render_object/chat_message/chat_message_example_screen.dart';
 import 'render_object/slider_render_object_example.dart';
 
 final navigaterKey = GlobalKey<NavigatorState>();
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.poppins().fontFamily,
         useMaterial3: true,
-        colorScheme: const ColorScheme.light(),
+        colorScheme: const ColorScheme.dark(),
       ),
       navigatorKey: navigaterKey,
       localizationsDelegates: const [
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('fr'), // French
       ],
-      home: const RenderObjectExample(),
+      home: const ChatMessageExampleScreen(),
     );
   }
 }
